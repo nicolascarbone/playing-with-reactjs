@@ -1,10 +1,9 @@
 
-var $		 				= require('jquery'),
-		Backbone 		= require('backbone'),
-		React 			= require('react'),
-		KeysModule  = require('../utils/keys.js'),
-    YTComponent = require('../components/youtube.component.js');
-
+var $		 							= require('jquery'),
+		Backbone 					= require('backbone'),
+		React 						= require('react'),
+		KeysModule  			= require('../utils/keys.js'),
+    YTVideosComponent = require('../components/youtube.component.js');
 
 var YoutubeView = Backbone.View.extend({
 
@@ -108,6 +107,7 @@ var YoutubeView = Backbone.View.extend({
 	handleAPILoaded: function() {
 	  //this.search();
 	  console.log("API LOADED");
+	  $('#spinner-loader').hide();
 	},
 
 	// Load the client interfaces for the YouTube Analytics and Data APIs, which
@@ -122,8 +122,7 @@ var YoutubeView = Backbone.View.extend({
 
 	render: function( videos ) {
 		console.log("video ", videos);
-		//React.render(<YTComponent {...video} />, document.getElementById('main'));
-		React.render(<YTComponent videos={videos} />, document.getElementById('main'));
+		React.render(<YTVideosComponent videos={videos} />, document.getElementById('main'));
 	},
 
 	// Search for a specified string.
