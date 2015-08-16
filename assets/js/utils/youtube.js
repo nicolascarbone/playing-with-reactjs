@@ -28,6 +28,7 @@ var YoutubeView = Backbone.View.extend({
 		];
 
 		window.gapi_onload = function() {
+			console.log("gapi_onload");
 			self.googleApiClientReady();
 		}
 
@@ -70,6 +71,7 @@ var YoutubeView = Backbone.View.extend({
 	    scope: self.OAUTH2_SCOPES,
 	    immediate: true
 	  }, function( authResult ) {
+	  	console.log(authResult);
 	  	if (authResult && !authResult.error) {
 	  		self.loadAPIClientInterfaces();
 	  	}
@@ -119,10 +121,9 @@ var YoutubeView = Backbone.View.extend({
 	  });
 	},
 
-	component: function() {
-		console.log("YTComponent", YTComponent);
-		console.log("new YTComponent() ", new YTComponent());
-		return new YTComponent();
+	render: function( video ) {
+		console.log("video ", video);
+		React.render(<YTComponent {...video} />, document.getElementById('main'));
 	},
 
 	// Search for a specified string.
@@ -134,21 +135,11 @@ var YoutubeView = Backbone.View.extend({
 			  });
 
 	  request.execute(function(response) {
-	  	//var response = JSON.parse( response );
-	  	console.log(response);
 
-      //React.render(React.createElement(self.component()), document.getElementById('main'));
-      React.render(self.component(), document.getElementById('main'));
-
-	  	$.each(response.items, function(a, b) {
-	  		console.log(b);
-	  		console.log("##################");
+	  	$.each(response.items, function(a, video) {
+	  		self.render( video );
 	  	});
-	  	/*
-	    var str = JSON.stringify(response.result);
-	    console.log("STR", str);
-	    $('#main').html('<pre>' + str + '</pre>');
-	    */
+
 	  });
 
 	}

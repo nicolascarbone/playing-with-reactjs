@@ -1,9 +1,9 @@
 
 var $             = require('jquery'),
     Backbone      = require('backbone'),
-    YoutubeModule = require('../utils/youtube.js'),
-    React         = require('react'),
-    YTComponent   = require('../components/youtube.component.js');
+    YoutubeModule = require('../utils/youtube.js');
+    //React         = require('react'),
+    //YTComponent   = require('../components/youtube.component.js');
 
 module.exports = Backbone.View.extend({
 
@@ -21,7 +21,7 @@ module.exports = Backbone.View.extend({
   component: function() {
     //console.log("YTComponent", YTComponent);
     //console.log("new YTComponent() ", new YTComponent());
-    return new YTComponent();
+    //return new YTComponent();
   },
 
   handleFiles: function() {
