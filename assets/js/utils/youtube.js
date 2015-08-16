@@ -108,7 +108,6 @@ var YoutubeView = Backbone.View.extend({
 	handleAPILoaded: function() {
 	  //this.search();
 	  console.log("API LOADED");
-
 	},
 
 	// Load the client interfaces for the YouTube Analytics and Data APIs, which
@@ -121,9 +120,10 @@ var YoutubeView = Backbone.View.extend({
 	  });
 	},
 
-	render: function( video ) {
-		console.log("video ", video);
-		React.render(<YTComponent {...video} />, document.getElementById('main'));
+	render: function( videos ) {
+		console.log("video ", videos);
+		//React.render(<YTComponent {...video} />, document.getElementById('main'));
+		React.render(<YTComponent videos={videos} />, document.getElementById('main'));
 	},
 
 	// Search for a specified string.
@@ -136,10 +136,12 @@ var YoutubeView = Backbone.View.extend({
 
 	  request.execute(function(response) {
 
+	  	self.render( response.items );
+	  	/*
 	  	$.each(response.items, function(a, video) {
 	  		self.render( video );
 	  	});
-
+			*/
 	  });
 
 	}

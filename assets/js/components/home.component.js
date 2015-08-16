@@ -4,12 +4,6 @@ var React         = require('react'),
 
 var HomeComponent = React.createClass({
 
-	/*
-  toUpperCase: function(a) {
-		console.log("a ", arguments);
-		return '';
-	},
-  */
   render: function () {
     return (
       <div>

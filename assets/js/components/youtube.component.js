@@ -6,25 +6,31 @@ var YTComponent = React.createBackboneClass({
 
   render: function () {
     return (
-      <div class="ui card">
-        <div class="image">
-          <img src={this.props.snippet.thumbnails.default.url}>
-        </div>
-        <div class="content">
-          <a class="header">{this.props.snippet.title}</a>
-          <div class="meta">
-            <span class="date">{this.props.snippet.publishedAt}</span>
-          </div>
-          <div class="description">
-            {this.props.snippet.description}
-          </div>
-        </div>
-        <div class="extra content">
-          <a>
-            <i class="user icon"></i>
-            22 Friends
-          </a>
-        </div>
+      <div>
+        {
+          this.props.videos.map(function( video ) {
+            return <div className="ui card">
+              <div className="image">
+                <img src={video.snippet.thumbnails.medium.url} />
+              </div>
+              <div className="content">
+                <a className="header">{video.snippet.title}</a>
+                <div className="meta">
+                  <span className="date">{video.snippet.publishedAt}</span>
+                </div>
+                <div className="description">
+                  {video.snippet.description}
+                </div>
+              </div>
+              <div className="extra content">
+                <a>
+                  <i className="user icon"></i>
+                  2 Friends
+                </a>
+              </div>
+            </div>
+          })
+        }
       </div>
     );
   }
