@@ -7,6 +7,7 @@ var HomeComponent = React.createClass({
   render: function () {
     return (
       <div id="home">
+      	<div id="spinner"></div>
       	<div id="files"></div>
       	<div id="videos"></div>
       </div>

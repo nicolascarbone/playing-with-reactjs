@@ -37,6 +37,10 @@ var YTVideoComponent = React.createBackboneClass({
 
 var YTVideosComponent = React.createBackboneClass({
 
+  getInitialState: function() {
+
+  },
+
   render: function () {
     return (
       <div>
