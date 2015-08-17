@@ -1,8 +1,13 @@
 /** @jsx React.DOM */
 var React         = require('react'),
-		ReactBackbone	= require('react.backbone');
+		ReactBackbone	= require('react.backbone'),
+    SpinnerComponent  = require('../components/spinner.component.js');
 
 var HomeComponent = React.createClass({
+
+  componentDidMount: function() {
+    React.render(<SpinnerComponent />, document.getElementById('spinner'));
+  },
 
   render: function () {
     return (

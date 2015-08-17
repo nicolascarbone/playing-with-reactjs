@@ -37,16 +37,12 @@ var YTVideoComponent = React.createBackboneClass({
 
 var YTVideosComponent = React.createBackboneClass({
 
-  getInitialState: function() {
-
-  },
-
   render: function () {
     return (
       <div>
         {
           this.props.videos.map(function( video ) {
-            return <YTVideoComponent video={video} />
+            return <YTVideoComponent key={video.id.videoID} video={video} />
           })
         }
       </div>

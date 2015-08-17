@@ -136,11 +136,7 @@ var YoutubeView = Backbone.View.extend({
 	  request.execute(function(response) {
 
 	  	self.render( response.items );
-	  	/*
-	  	$.each(response.items, function(a, video) {
-	  		self.render( video );
-	  	});
-			*/
+
 	  });
 
 	}

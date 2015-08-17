@@ -15,13 +15,10 @@ module.exports = Backbone.View.extend({
 
       React.render(<HomeComponent />, document.body);
 
-      React.render(<SpinnerComponent />, $('#spinner').get(0));
-
       var FilesModule   = require('./files.js'),
           FilesView     = new FilesModule();
 
       FilesView.render();
-
 
     }
 
