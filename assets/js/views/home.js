@@ -11,16 +11,18 @@ module.exports = Backbone.View.extend({
     el: '#main',
 
     initialize: function() {
-      var FilesModule = require('./files.js'),
-          FilesView   = new FilesModule();
-    },
+      console.log("init home");
 
-    component: function() {
-      return new HomeComponent();
     },
 
     render: function() {
-      React.render(React.createElement(this.component()), document.body);
+      console.log("rendering home");
+      React.render(<HomeComponent />, document.body);
+
+      var FilesModule = require('./files.js'),
+          FilesView   = new FilesModule();
+      FilesView.render();
+
     }
 
 });

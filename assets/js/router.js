@@ -13,8 +13,8 @@ module.exports = Backbone.Router.extend({
   home: function() {
     var HomeModule 		= require('./views/home.js'),
         HomeView 			= new HomeModule();
-        //YoutubeModule	= require('./utils/youtube.js'),
-        //YoutubeView		= new YoutubeModule();
+
+    HomeView.render();
   },
 
 });

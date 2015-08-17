@@ -122,7 +122,7 @@ var YoutubeView = Backbone.View.extend({
 
 	render: function( videos ) {
 		console.log("video ", videos);
-		React.render(<YTVideosComponent videos={videos} />, document.getElementById('main'));
+		React.render(<YTVideosComponent videos={videos} />, $('#videos').get(0));
 	},
 
 	// Search for a specified string.

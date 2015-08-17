@@ -6,8 +6,9 @@ var HomeComponent = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <div id="main-container"></div>
+      <div id="home">
+      	<div id="files"></div>
+      	<div id="videos"></div>
       </div>
     );
   }

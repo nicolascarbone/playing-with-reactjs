@@ -1,27 +1,27 @@
 
-var $             = require('jquery'),
-    Backbone      = require('backbone'),
-    YoutubeModule = require('../utils/youtube.js');
-    //React         = require('react'),
-    //YTComponent   = require('../components/youtube.component.js');
+var $               = require('jquery'),
+    Backbone        = require('backbone'),
+    React           = require('react'),
+    FilesComponent  = require('../components/files.component.js'),
+    YoutubeModule   = require('../utils/youtube.js');
 
 module.exports = Backbone.View.extend({
 
-  el: '#files',
+  el: document.body,
 
   events: {
     'change': 'handleFiles'
   },
 
-  initialize: function() {
+  render: function() {
     console.log("initializing files");
-    YoutubeView = new YoutubeModule();
+    //document.getElementById('home')
+    React.render(<FilesComponent />, $('#files').get(0));
   },
 
-  component: function() {
-    //console.log("YTComponent", YTComponent);
-    //console.log("new YTComponent() ", new YTComponent());
-    //return new YTComponent();
+  initialize :function() {
+    console.log("files se renderizo");
+    YoutubeView = new YoutubeModule();
   },
 
   handleFiles: function() {
@@ -34,11 +34,7 @@ module.exports = Backbone.View.extend({
       // inspeccionar metadata de archivos
       console.log("###########################");
       console.log(f.name);
-
       YoutubeView.search( f.name );
-      //console.log(React.createElement(self.component()));
-      //React.renderComponent(React.createElement(self.component()), document.getElementById('main'));
-
       console.log("###########################");
     }
 
