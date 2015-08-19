@@ -9,7 +9,7 @@ var $                 = require('jquery'),
 
 module.exports = Backbone.View.extend({
 
-    el: '#main',
+    el: 'document.body',
 
     render: function() {
 
@@ -20,6 +20,6 @@ module.exports = Backbone.View.extend({
 
       FilesView.render();
 
-    }
+    },
 
 });

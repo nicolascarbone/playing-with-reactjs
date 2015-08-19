@@ -6,13 +6,13 @@ var React         = require('react'),
 var HomeComponent = React.createClass({
 
   componentDidMount: function() {
-    React.render(<SpinnerComponent />, document.getElementById('spinner'));
+    //React.render(<SpinnerComponent />, document.getElementById('spinner'));
   },
 
   render: function () {
     return (
       <div id="home">
-      	<div id="spinner"></div>
+      	<div id="spinner"><SpinnerComponent /></div>
       	<div id="files"></div>
       	<div id="videos"></div>
       </div>

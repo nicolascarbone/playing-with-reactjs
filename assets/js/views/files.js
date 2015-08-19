@@ -7,21 +7,27 @@ var $               = require('jquery'),
 
 module.exports = Backbone.View.extend({
 
-  el: document.body,
+  el: '#files',
 
   events: {
-    'change': 'handleFiles'
-  },
-
-  render: function() {
-    console.log("initializing files");
-    //document.getElementById('home')
-    React.render(<FilesComponent />, $('#files').get(0));
+    'change': 'handleFiles',
+    'dragover': 'dragOver',
+    'drop': 'Drop',
   },
 
   initialize :function() {
-    console.log("files se renderizo");
     YoutubeView = new YoutubeModule();
+  },
+
+  drop: function( event ) {
+    console.log(event.originalEvent.dataTransfer.files);
+  },
+
+  dragOver: function( event ) {
+    console.log('dragged file');
+    //event.stopPropagation();
+    //event.preventDefault();
+    //event.dataTransfer.dropEffect = 'copy';
   },
 
   handleFiles: function() {
@@ -38,6 +44,12 @@ module.exports = Backbone.View.extend({
       console.log("###########################");
     }
 
-  }
+  },
+
+  render: function() {
+    console.log("initializing files");
+    //document.getElementById('home')
+    React.render(<FilesComponent />, $('#files').get(0));
+  },
 
 })
