@@ -3,9 +3,9 @@ var $											= require('jquery'),
 		_											= require('underscore'),
 		Backbone 							= require('backbone'),
 		React 								= require('react'),
-		KeysModule  					= require('../utils/keys.js'),
+		KeysModule 						= require('../utils/keys.js'),
     YTVideosComponent 		= require('../components/youtube.component.js'),
-    YTCategoriesComponent = require('../components/youtube.categories.component.js');
+    YTCategoriesComponent	= require('../components/youtube.categories.component.js');
 
 var YoutubeView = Backbone.View.extend({
 
@@ -93,8 +93,7 @@ var YoutubeView = Backbone.View.extend({
 			});
 
 	  	request.execute(function( response ) {
-	  		console.log(response.items);
-	  		React.render(<YTCategoriesComponent categories={response.items} />, $('#videos').get(0));
+	  		React.render(<YTCategoriesComponent categories={response.items} videos={videos} />, $('#videos').get(0));
 	  		//React.render(<YTVideosComponent videos={videos} />, $('#videos').get(0));
 	  	});
 
