@@ -1,7 +1,7 @@
 
 /** @jsx React.DOM */
 var React         = require('react'),
-		ReactBackbone	= require('react.backbone');
+    ReactBackbone = require('react.backbone');
 
 var FormComponent = React.createBackboneClass({
 

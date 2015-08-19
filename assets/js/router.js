@@ -1,8 +1,8 @@
 
 'use strict';
 
-var $					=	require('jquery'),
-		Backbone 	= require('backbone');
+var $        = require('jquery'),
+    Backbone = require('backbone');
 
 module.exports = Backbone.Router.extend({
 
@@ -11,8 +11,8 @@ module.exports = Backbone.Router.extend({
   },
 
   home: function() {
-    var HomeModule 		= require('./views/home.js'),
-        HomeView 			= new HomeModule();
+    var HomeModule = require('./views/home.js'),
+        HomeView   = new HomeModule();
 
     HomeView.render();
   },

@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React         = require('react'),
-		ReactBackbone	= require('react.backbone'),
+    ReactBackbone = require('react.backbone'),
     SpinnerComponent  = require('../components/spinner.component.js');
 
 var HomeComponent = React.createClass({
@@ -12,9 +12,9 @@ var HomeComponent = React.createClass({
   render: function () {
     return (
       <div id="home">
-      	<div id="spinner"><SpinnerComponent /></div>
-      	<div id="files"></div>
-      	<div id="videos"></div>
+        <div id="spinner"><SpinnerComponent /></div>
+        <div id="files"></div>
+        <div id="videos"></div>
       </div>
     );
   }
